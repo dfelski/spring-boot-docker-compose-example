@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  frontend:
+    hostname: frontend
+    build: ./frontend
+    ports:
+      - 8080:8080
+    networks:
+      - frontend
+      - backend
+
+  backend:
+    hostname: backend
+    build: ./backend
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
